@@ -12,7 +12,7 @@ inngest_client = inngest.Inngest(
 # Create an Inngest function
 @inngest_client.create_function(
     fn_id="my_function",
-    trigger=inngest.TriggerEvent(event="app/my_function"),
+    trigger=inngest.TriggerEvent(event="clerk/user.created"),
 )
 async def my_function(ctx: inngest.Context, step: inngest.Step) -> str:
     ctx.logger.info(ctx.event)
